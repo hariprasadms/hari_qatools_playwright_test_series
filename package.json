@@ -1,0 +1,23 @@
+{
+  "name": "hari-qatools-playwright-test-series",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://playground.qatools.dev",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Playwright + TypeScript test automation series (beginner to advanced)",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.3.0",
+    "typescript": "^7.0.2"
+  }
+}
