@@ -10,8 +10,8 @@ Reels 01–06 (mindset + setup) are covered by the project setup. Lessons start 
 | 06 | Project setup | `tests/01-fundamentals` | ✅ |
 | 07 | Your first real Playwright test — automate a login | `tests/07-first-login-test` | ✅ |
 | 08 | What `await` actually does | `tests/08-await-explained` | ✅ |
-| 09 | `page.goto` and free auto-waiting | `tests/09-goto-auto-wait` | ⏳ next |
-| 10 | Fill a signup form end-to-end | | |
+| 09 | `page.goto` and free auto-waiting | `tests/09-goto-auto-wait` | ✅ |
+| 10 | Fill a signup form end-to-end | `tests/10-signup-form` | ⏳ next |
 | 11 | A test without assertions is not a test | | |
 | 12 | Break your test on purpose — reading errors | | |
 | 13 | Trace Viewer | | |

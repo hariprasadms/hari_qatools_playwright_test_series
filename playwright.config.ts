@@ -12,12 +12,22 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
 
+  // whole test must finish in 30 seconds
+  timeout: 30_000,
+
+  // every expect keeps checking for up to 5 seconds
+  expect: { timeout: 5_000 },
+
   // console output + HTML report
   reporter: [['list'], ['html', { open: 'never' }]],
 
   use: {
     // app under test - lets us write page.goto('/')
     baseURL: 'https://playground.qatools.dev',
+
+    // every click / fill gets 10 seconds, every goto gets 15 seconds
+    actionTimeout: 10_000,
+    navigationTimeout: 15_000,
 
     // record a trace when a test is retried
     trace: 'on-first-retry',

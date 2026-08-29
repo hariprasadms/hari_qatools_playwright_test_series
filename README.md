@@ -40,6 +40,7 @@ playwright.config.ts
 | 01 | Open the app and check the title | `tests/01-fundamentals` |
 | 07 | Your first real test - login | `tests/07-first-login-test` |
 | 08 | What `await` does | `tests/08-await-explained` |
+| 09 | No sleep needed - Playwright waits for you | `tests/09-goto-auto-wait` |
 
 See [CURRICULUM.md](CURRICULUM.md) for the full list and progress.
 
