@@ -27,6 +27,8 @@ npm run dashboard       # open the local test dashboard at http://localhost:4173
 
 Run `npm run dashboard`, then open [http://localhost:4173](http://localhost:4173). The dashboard discovers specs under `tests/`, lets you choose a browser project or headed mode, runs a selected spec locally, and opens the latest Playwright HTML report.
 
+The static dashboard is also published at [GitHub Pages](https://hariprasadms.github.io/hari_qatools_playwright_test_series/). The test runner connection will be added separately; GitHub Pages currently provides the interface only.
+
 ## Folder structure
 
 ```
