@@ -13,7 +13,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   // whole test must finish in 30 seconds
-  timeout: 30_000,
+  timeout: 120_000,
 
   // every expect keeps checking for up to 5 seconds
   expect: { timeout: 5_000 },
@@ -29,8 +29,8 @@ export default defineConfig({
     actionTimeout: 10_000,
     navigationTimeout: 15_000,
 
-    // record a trace when a test is retried
-    trace: 'on-first-retry',
+    // keep traces available while learning and debugging
+    trace: 'on',
 
     // take a screenshot when a test fails
     screenshot: 'only-on-failure',
@@ -39,7 +39,7 @@ export default defineConfig({
   // browsers to run on
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    // { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
-    // { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
 });

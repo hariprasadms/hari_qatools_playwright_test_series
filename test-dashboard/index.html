@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playwright Control Room</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Playwright Control Room home">
+        <span class="brand-mark">PW</span>
+        <span>Control Room</span>
+      </a>
+      <div class="connection"><span class="status-dot"></span> Local runner online</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Playwright test series</p>
+          <h1>Make the browser<br><em>do the work.</em></h1>
+          <p class="lede">Choose a spec, pick a browser, and watch the run happen without leaving this workspace.</p>
+        </div>
+        <div class="intro-stamp"><strong id="test-count">--</strong><span>specs<br>available</span></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="test-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">01 / Select</span><h2>Test library</h2></div>
+            <span class="count-pill" id="selected-label">None selected</span>
+          </div>
+          <label class="search-wrap" for="search-tests">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-tests" type="search" placeholder="Filter specs..." autocomplete="off">
+          </label>
+          <div id="test-list" class="test-list" aria-live="polite"></div>
+        </aside>
+
+        <div class="splitter" id="splitter" role="separator" aria-label="Resize test library" aria-orientation="vertical" aria-valuemin="28" aria-valuemax="55" aria-valuenow="38" tabindex="0"></div>
+
+        <section class="run-panel">
+          <div class="panel-heading">
+            <div><span class="section-kicker">02 / Configure</span><h2>Run controls</h2></div>
+            <span class="run-status" id="run-status">Ready</span>
+          </div>
+          <div class="controls">
+            <label class="field-label" for="project">Browser project</label>
+            <select id="project">
+              <option value="all">All browsers</option>
+              <option value="chromium">Chromium</option>
+              <option value="firefox">Firefox</option>
+              <option value="webkit">WebKit</option>
+            </select>
+            <label class="toggle-row" for="headed">
+              <span><strong>Headed mode</strong><small>Show the browser while the test runs</small></span>
+              <input id="headed" type="checkbox"><span class="toggle" aria-hidden="true"></span>
+            </label>
+            <button id="run-button" class="run-button" type="button" disabled><span>Run selected test</span><span class="arrow">↗</span></button>
+            <button id="report-button" class="report-button" type="button">Open latest HTML report <span>↗</span></button>
+          </div>
+          <div class="output-heading"><span class="section-kicker">03 / Observe</span><span id="run-meta">Output will appear here</span></div>
+          <pre id="output" class="output"><span class="muted-output">Select a test to begin.</span></pre>
+        </section>
+      </section>
+    </main>
+    <footer><span>Runs stay on this machine.</span><span>Powered by Playwright Test</span></footer>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

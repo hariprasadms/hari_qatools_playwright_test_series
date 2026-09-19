@@ -9,6 +9,7 @@
     "test:chromium": "playwright test --project=chromium",
     "report": "playwright show-report",
     "codegen": "playwright codegen https://playground.qatools.dev",
+    "dashboard": "node scripts/test-dashboard-server.mjs",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],

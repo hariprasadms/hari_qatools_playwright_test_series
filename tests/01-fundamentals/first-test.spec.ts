@@ -1,13 +1,23 @@
 import { test, expect } from '@playwright/test';
+import { PlaygroundPage } from '../../src/pages/playground-page';
 
-// Lesson 01 - open the app and check it loaded
-test('Launch the application and verify it loaded', async ({ page }) => {
-  // open the app
-  await page.goto('https://playground.qatools.dev/');
+// Lesson 01 - navigate from the home page to a product and back
+test('navigate from the apps menu to a product and back home', { tag: '@navigation' }, async ({ page }) => {
+	const playgroundPage = new PlaygroundPage(page);
+	const firstProduct = playgroundPage.firstProduct;
 
-  // check the page title
-  await expect(page).toHaveTitle(/QATools Playground/);
+	await test.step('Open the home page', async () => {
+		await playgroundPage.open();
+	});
 
-  // check the URL
-  await expect(page).toHaveURL('https://playground.qatools.dev/');
+	await test.step('Open the shop from the apps menu', async () => {
+		await playgroundPage.openShop();
+		await expect(firstProduct).toBeVisible();
+	});
+
+	await test.step('Open a product and return home', async () => {
+		await firstProduct.click();
+		await expect(playgroundPage.navbarBrand).toBeVisible();
+		await playgroundPage.returnHome();
+	});
 });
