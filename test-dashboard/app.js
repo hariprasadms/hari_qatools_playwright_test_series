@@ -43,8 +43,16 @@ function updateRun(run) {
 }
 
 async function loadTests() {
-  const response = await fetch('/api/tests');
-  const data = await response.json();
+  let data;
+  try {
+    const response = await fetch('/api/tests');
+    if (!response.ok) throw new Error('Local runner unavailable');
+    data = await response.json();
+  } catch {
+    const response = await fetch('tests.json');
+    if (!response.ok) throw new Error('Static test manifest unavailable');
+    data = await response.json();
+  }
   state.tests = data.tests;
   $('#test-count').textContent = state.tests.length;
   renderTests();

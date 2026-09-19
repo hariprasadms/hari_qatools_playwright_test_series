@@ -30,6 +30,9 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Generate test manifest
+        run: node scripts/generate-test-manifest.mjs
+
       - name: Upload dashboard
         uses: actions/upload-pages-artifact@v3
         with:

@@ -32,3 +32,4 @@ Thumbs.db
 npm-debug.log*
 coverage/
 .playwright-mcp/
+test-dashboard/tests.json
